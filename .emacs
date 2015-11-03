@@ -1,7 +1,6 @@
 ;----------------------;
 ;;;packages and paths;;;
 ;----------------------;
-
 ;; path where settings files are kept
 (add-to-list 'load-path "~/.emacs.d/settings")
 (add-to-list 'load-path "~/.emacs.d")
