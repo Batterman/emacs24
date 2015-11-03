@@ -1,6 +1,7 @@
 ;----------------------;
 ;;;packages and paths;;;
 ;----------------------;
+
 ;; path where settings files are kept
 (add-to-list 'load-path "~/.emacs.d/settings")
 (add-to-list 'load-path "~/.emacs.d")
@@ -29,9 +30,21 @@
 
 
 
+
 ;---------------;
 ;;; Utilities ;;;
 ;---------------;
+
+;helm 
+(require 'helm)
+(require 'helm-descbinds)
+
+(fset 'describe-bindings 'helm-descbinds)
+(helm-mode 1)
+
+(global-set-key (kbd "C-c h") 'helm-mini)
+
+(provide 'helm-settings)
 
 ;;auto-complete
 (require 'auto-complete-config)
@@ -78,10 +91,23 @@
 
 ;org mode: capture
      (setq org-capture-templates
-      '(("t" "Todo" entry (file+headline "~/org/gtd.org" "Tasks")
-             "* TODO %?\n  %i\n  %a")
-        ("j" "Journal" entry (file+datetree "~/org/journal.org")
-             "* %?\nEntered on %U\n  %i\n  %a")))
+      '(("a" "Appointttttment" entry (file+headline "~/Dropbox/Org/capture/taskdiary.org" "Calendar")
+             "* APPT %^{Description} %^g
+  %?
+  Added: %U")
+        ("n" "Notes" entry (file+datetree "~/Dropbox/Org/capture/taskdiary.org")
+             "* %^{Description} %^g
+  %?
+  Added: %U")
+        ("t" "Task diary" entry (file+datetree "~/Dropbox/Org/capture/taskdiary.org")
+             "* TODO %^{Description}  %^g
+  %?
+  Added: %U")
+        ("j" "Journal" entry (file+datetree "~/Dropbox/Org/capture/workjournal.org")
+             "** %^{Heading}")
+        ("l" "Log time" entry (file+datetree "~/Dropbox/Org/capture/timelog.org")
+             "** %U - %^{Activity}  :TIME:")))
+
 
 ;yasnippet
 (yas-global-mode 1)

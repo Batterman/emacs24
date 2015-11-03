@@ -1,4 +1,6 @@
-((("minimap-mode" .
+((("require" .
+   [1 0 0 0 0 0 0])
+  ("minimap-mode" .
    [2 0 0 0 0 0 0 0 0 0 0 0])
   ("neotree" .
    [1 0 0 0 0 0 0])
