@@ -14,7 +14,7 @@
  (position . 31))
 ("org-capture-last-stored"
  (filename . "~/Dropbox/Org/capture/taskdiary.org")
- (front-context-string . "**** TODO vietna")
- (rear-context-string . "1-03 Tue 21:29]\n")
- (position . 962))
+ (front-context-string . "**** TODO husk a")
+ (rear-context-string . "-11-05 Thursday\n")
+ (position . 693))
 )

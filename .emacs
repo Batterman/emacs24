@@ -91,22 +91,27 @@
 
 ;org mode: capture
      (setq org-capture-templates
-      '(("a" "Appointttttment" entry (file+headline "~/Dropbox/Org/capture/taskdiary.org" "Calendar")
+      '(("a" "Appointment - quick" entry (file+headline "~/Dropbox/Org/capture/taskdiary.org" "Calendar")
+             "* APPT %^{Description} %^g
+  %U" :immediate-finish t)
+
+        ("A" "Appointment - description included" entry (file+headline "~/Dropbox/Org/capture/taskdiary.org" "Calendar")
              "* APPT %^{Description} %^g
   %?
-  Added: %U")
-        ("n" "Notes" entry (file+datetree "~/Dropbox/Org/capture/taskdiary.org")
+  %U")
+
+
+        ("n" "Noter" entry (file+datetree "~/Dropbox/Org/capture/taskdiary.org")
              "* %^{Description} %^g
   %?
-  Added: %U")
-        ("t" "Task diary" entry (file+datetree "~/Dropbox/Org/capture/taskdiary.org")
-             "* TODO %^{Description}  %^g
-  %?
-  Added: %U")
+  %U")
+        ("t" "Todo" entry (file+datetree "~/Dropbox/Org/capture/taskdiary.org")
+             "* TODO %^{Description} %^g
+  %?" :immediate-finish t)
         ("j" "Journal" entry (file+datetree "~/Dropbox/Org/capture/workjournal.org")
              "** %^{Heading}")
         ("l" "Log time" entry (file+datetree "~/Dropbox/Org/capture/timelog.org")
-             "** %U - %^{Activity}  :TIME:")))
+             "** %U - %^{Activity}  :TIME:" :immediate-finish t)))
 
 
 ;yasnippet
